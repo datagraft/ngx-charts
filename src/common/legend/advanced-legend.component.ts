@@ -50,16 +50,6 @@ import { formatLabel } from '../label.helper';
               {{legendItem.value}}
             </div>
             <div class="item-label">{{legendItem.label}}</div>
-            <div *ngIf="animations"
-              class="item-percent"
-              ngx-charts-count-up
-              [countTo]="legendItem.percentage"
-              [countSuffix]="'%'">
-            </div>
-            <div *ngIf="!animations"
-              class="item-percent">
-              {{legendItem.percentage.toLocaleString()}}%
-            </div>
           </div>
         </div>
       </div>
@@ -69,7 +59,7 @@ import { formatLabel } from '../label.helper';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AdvancedLegendComponent implements OnChanges  {
+export class AdvancedLegendComponent implements OnChanges {
 
   @Input() width: number;
   @Input() data;
