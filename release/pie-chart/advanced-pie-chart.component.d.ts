@@ -22,7 +22,6 @@ export declare class AdvancedPieChartComponent extends BaseChartComponent {
     margin: number[];
     valueFormatting: (value: number) => any;
     nameFormatting: (value: string) => any;
-    percentageFormatting: (value: number) => any;
     update(): void;
     getDomain(): any[];
     onClick(data: any): void;

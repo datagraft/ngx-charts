@@ -47,17 +47,16 @@ import { BaseChartComponent } from '../common/base-chart.component';
       </div>
       <div
         class="advanced-pie-legend-wrapper"
-        [style.width.px]="width - dims.width"
+        [style.width.px]="width - dims.width - 350"
         [style.height.px]="height">
         <ngx-charts-advanced-legend
           [data]="results"
           [colors]="colors"
-          [width]="width - dims.width - margin[1]"
+          [width]="width - dims.width - margin[1] - 300"
           [label]="label"
           [animations]="animations"
           [valueFormatting]="valueFormatting"
           [labelFormatting]="nameFormatting"
-          [percentageFormatting]="percentageFormatting"
           (select)="onClick($event)"
           (activate)="onActivate($event)"
           (deactivate)="onDeactivate($event)">
@@ -97,7 +96,6 @@ export class AdvancedPieChartComponent extends BaseChartComponent {
 
   @Input() valueFormatting: (value: number) => any = value => value;
   @Input() nameFormatting: (value: string) => any = label => label;
-  @Input() percentageFormatting: (value: number) => any = percentage => percentage;
 
   update(): void {
     super.update();
@@ -134,8 +132,8 @@ export class AdvancedPieChartComponent extends BaseChartComponent {
   }
 
   onActivate(event): void {
-    if(this.activeEntries.indexOf(event) > -1) return;
-    this.activeEntries = [ event, ...this.activeEntries ];
+    if (this.activeEntries.indexOf(event) > -1) return;
+    this.activeEntries = [event, ...this.activeEntries];
     this.activate.emit({ value: event, entries: this.activeEntries });
   }
 

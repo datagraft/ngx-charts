@@ -16,18 +16,6 @@ import { formatLabel } from '../label.helper';
   template: `
     <div class="advanced-pie-legend"
       [style.width.px]="width">
-      <div
-        *ngIf="animations"
-        class="total-value"
-        ngx-charts-count-up
-        [countTo]="roundedTotal">
-      </div>
-      <div *ngIf="!animations">
-        {{roundedTotal}}
-      </div>
-      <div class="total-label">
-        {{label}}
-      </div>
       <div class="legend-items-container">
         <div class="legend-items">
           <div

@@ -3,4 +3,5 @@
   float: left; }
 
 .advanced-pie-legend-wrapper {
+  padding-top: 15px;
   display: inline-block; }
